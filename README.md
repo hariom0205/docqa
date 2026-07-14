@@ -25,6 +25,40 @@ those chunks and to cite which ones it used.
    with a prompt that forces it to answer only from what it's given and to
    cite the excerpt numbers it relied on.
 
+## Evaluation
+
+Retrieval and generation were measured separately against a 20-question
+labeled eval set (`eval_set.json`), using `retrieval_eval.py` and
+`citation_eval.py`.
+
+**Retrieval (TF-IDF, top-4 chunks):**
+- Top-4 hit rate: 70% (14/20) — the correct chunk was somewhere in the top 4
+- Top-1 hit rate: 40% (8/20) — the correct chunk was ranked highest
+
+Failures clustered around questions phrased in natural language that didn't
+lexically overlap with the SQL-syntax source text (e.g. "sort ascending and
+descending" vs. the doc's literal `ORDER BY ... DESC`) — a known limitation
+of bag-of-words retrieval, and the motivation for the embeddings next step
+below.
+
+**Citation accuracy (generation):**
+- 20/20 answers were graded correct or appropriately abstained
+- On the 3 questions where retrieval missed the right chunk, the LLM
+  correctly said the excerpts didn't contain the answer instead of
+  hallucinating a plausible-sounding one — validating the grounding prompt
+  in `build_prompt()`, which explicitly instructs the model not to guess.
+
+Full per-question results are in `citation_eval_results.json`. Re-run the
+eval on a new document with:
+
+```bash
+python retrieval_eval.py path/to/document.pdf eval_set.json
+python citation_eval.py path/to/document.pdf eval_set.json
+```
+
+(`eval_set.json` is written against `SQL Query Interview Questions.pdf` —
+swap in your own document and questions to re-run against something else.)
+
 ## Setup
 
 ```bash
