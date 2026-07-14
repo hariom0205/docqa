@@ -1,0 +1,222 @@
+[
+  {
+    "question": "How do I convert a column's values to uppercase in a query?",
+    "answer": "You can convert a column's values to uppercase in a query by using the UPPER() function. \n\nSources: [1]",
+    "retrieved_pages": [
+      2,
+      3,
+      6,
+      4
+    ],
+    "grade": "y"
+  },
+  {
+    "question": "How do I get only the distinct/unique majors from the student table?",
+    "answer": "You can get the distinct/unique majors from the student table by using the following SQL query: \nSELECT DISTINCT MAJOR from STUDENT; \nor \nSELECT MAJOR FROM STUDENT GROUP BY(MAJOR);\n\nSources: [2]",
+    "retrieved_pages": [
+      25,
+      3,
+      4,
+      23
+    ],
+    "grade": "y"
+  },
+  {
+    "question": "How do I extract the first three characters of a name using SQL?",
+    "answer": "You can extract the first three characters of a name using the SUBSTRING() function in SQL, starting at position 1 and retrieving the next 3 characters. The query would be: SELECT SUBSTRING(FIRST_NAME, 1, 3) FROM Student;\n\nSources: [2]",
+    "retrieved_pages": [
+      3,
+      24,
+      17,
+      4
+    ],
+    "grade": "y"
+  },
+  {
+    "question": "How do I find the position of a particular character within a string?",
+    "answer": "You can use the INSTR() function to find the position of a particular character within a string. This function finds the position of the first occurrence of the specified character in the string.\n\nSources: [3]",
+    "retrieved_pages": [
+      4,
+      5,
+      31,
+      28
+    ],
+    "grade": "y"
+  },
+  {
+    "question": "How do I replace one character with another throughout a column?",
+    "answer": "You can use the REPLACE() function to substitute every occurrence of a specified character with another character in a column. For example, to replace 'a' with 'A' in the FIRST_NAME column, you can use the query: SELECT REPLACE(FIRST_NAME, 'a', 'A') FROM Student;\n\nSources: [4]",
+    "retrieved_pages": [
+      5,
+      4,
+      6,
+      3
+    ],
+    "grade": "y"
+  },
+  {
+    "question": "How do I merge first and last name into a single output column?",
+    "answer": "You can merge first and last name into a single output column using the CONCAT() function, which combines the FIRST_NAME and LAST_NAME, separated by a space, into a single column.\n\nSources: [5, 10]",
+    "retrieved_pages": [
+      6,
+      11,
+      3,
+      5
+    ],
+    "grade": "y"
+  },
+  {
+    "question": "How do I sort by one column ascending and a second column descending?",
+    "answer": "To sort by one column ascending and a second column descending, you can use the ORDER BY clause with the column names and the ASC or DESC keyword. For example: SELECT * FROM Student ORDER BY FIRST_NAME, MAJOR DESC;\n\nSources: [5]",
+    "retrieved_pages": [
+      6,
+      3,
+      5,
+      2
+    ],
+    "grade": "y"
+  },
+  {
+    "question": "How do I filter rows where a column matches any value in a list?",
+    "answer": "The excerpts provided do not contain information on how to filter rows where a column matches any value in a list.\n\nSources: [None]",
+    "retrieved_pages": [
+      13,
+      3,
+      5,
+      6
+    ],
+    "grade": "y"
+  },
+  {
+    "question": "How do I exclude specific values from results using NOT IN?",
+    "answer": "The excerpts provided do not contain information on how to exclude specific values from results using NOT IN.\n\nSources: [None]",
+    "retrieved_pages": [
+      2,
+      29,
+      25,
+      3
+    ],
+    "grade": "y"
+  },
+  {
+    "question": "How do I find names that end with a specific letter and are exactly 5 characters long?",
+    "answer": "To find names that end with a specific letter and are exactly 5 characters long, you can use the LIKE operator with '_____a', where the underscores denote the exact length and 'a' is the specific letter. \n\nSources: [8, 9]",
+    "retrieved_pages": [
+      10,
+      5,
+      9,
+      3
+    ],
+    "grade": "y"
+  },
+  {
+    "question": "How do I filter rows where a numeric column falls within a range?",
+    "answer": "You can use the BETWEEN operator to filter rows where a numeric column falls within a range. For example, to retrieve rows where the GPA falls within the inclusive range of 9.00 to 9.99, you can use the query: SELECT * FROM Student WHERE GPA BETWEEN 9.00 AND 9.99;\n\nSources: [9]",
+    "retrieved_pages": [
+      10,
+      11,
+      13,
+      6
+    ],
+    "grade": "y"
+  },
+  {
+    "question": "How do I count how many students are in a specific major?",
+    "answer": "To count the number of students in a specific major, you can use the COUNT() function in SQL, grouping the students by their major. The query would be: SELECT MAJOR, COUNT(MAJOR) AS ALL_MAJOR FROM Student GROUP BY MAJOR;\n\nSources: [21, 29, 30 in excerpt 21]",
+    "retrieved_pages": [
+      11,
+      22,
+      30,
+      21
+    ],
+    "grade": "y"
+  },
+  {
+    "question": "How do I join two tables to show which students got scholarships?",
+    "answer": "To join two tables to show which students got scholarships, you can use an INNER JOIN. The INNER JOIN combines data from Student and Scholarship tables where STUDENT_ID matches STUDENT_REF_ID. This retrieves students who received scholarships, along with their scholarship details. The SQL query for this is: \nSELECT Student.FIRST_NAME, Student.LAST_NAME, Scholarship.SCHOLARSHIP_AMOUNT, Scholarship.SCHOLARSHIP_DATE \nFROM Student \nINNER JOIN Scholarship \nON Student.STUDENT_ID = Scholarship.STUDENT_REF_ID;\n\nSources: [12, 11]",
+    "retrieved_pages": [
+      13,
+      1,
+      15,
+      12
+    ],
+    "grade": "y"
+  },
+  {
+    "question": "How do I select only the even-numbered rows from a table?",
+    "answer": "To select only the even-numbered rows from a table, you can use the SQL query: SELECT * FROM Student WHERE student_id % 2 = 0;\n\nSources: [12]",
+    "retrieved_pages": [
+      13,
+      20,
+      23,
+      27
+    ],
+    "grade": "y"
+  },
+  {
+    "question": "How do I use a LEFT JOIN to include rows with no match, like students without scholarships?",
+    "answer": "A LEFT JOIN retrieves all students, including those without scholarships. For students with no matching record in the Scholarship table, SCHOLARSHIP_AMOUNT and SCHOLARSHIP_DATE are NULL.\n\nSources: [14]",
+    "retrieved_pages": [
+      13,
+      9,
+      15,
+      30
+    ],
+    "grade": "y"
+  },
+  {
+    "question": "How do I get the top N rows sorted by GPA descending?",
+    "answer": "To get the top N rows sorted by GPA descending, you can use a query similar to the one that fetches the nth max GPA, but with an added ORDER BY clause for descending order. However, the exact query to achieve this directly is not provided in the excerpts.\n\nSources: [24, 25, 16]",
+    "retrieved_pages": [
+      25,
+      26,
+      17,
+      30
+    ],
+    "grade": "y"
+  },
+  {
+    "question": "How do I find the nth highest GPA using a correlated subquery, without LIMIT?",
+    "answer": "To find the nth highest GPA using a correlated subquery, without LIMIT, you can use the following query: \nSELECT * FROM Student s1 WHERE n-1 = ( SELECT COUNT(DISTINCT (s2.GPA)) FROM Student s2 WHERE s2.GPA > s1.GPA );\n\nHowever, the exact query is given as: \nSELECT * FROM Student s1 WHERE 4 = ( SELECT COUNT(DISTINCT (s2.GPA)) FROM Student s2 WHERE s2.GPA > s1.GPA ); for the 5th highest GPA.\n\nSources: [16, 24]",
+    "retrieved_pages": [
+      25,
+      17,
+      26,
+      16
+    ],
+    "grade": "y"
+  },
+  {
+    "question": "How do I find the second highest value using a subquery?",
+    "answer": "To find the second highest value using a subquery, you can use the following approach: SELECT MAX(GPA) FROM Student WHERE GPA NOT IN(SELECT MAX(GPA) FROM Student). This query first finds the maximum GPA, and then excludes this value to find the second highest GPA.\n\nSources: [17, 25]",
+    "retrieved_pages": [
+      18,
+      17,
+      24,
+      26
+    ],
+    "grade": "y"
+  },
+  {
+    "question": "How do I find students who never received a scholarship, using NOT IN with a subquery?",
+    "answer": "To find students who never received a scholarship, you can use the NOT IN operator with a subquery. The query would be: \nSELECT STUDENT_ID FROM Student WHERE STUDENT_ID NOT IN (SELECT STUDENT_REF_ID FROM Scholarship);\n\nSources: [19]",
+    "retrieved_pages": [
+      14,
+      12,
+      24,
+      20
+    ],
+    "grade": "y"
+  },
+  {
+    "question": "How do I compute the average GPA per major using GROUP BY?",
+    "answer": "To compute the average GPA per major using GROUP BY, you can use the following SQL query: \nSELECT MAJOR, AVG(GPA) AS AVERAGE_GPA FROM Student GROUP BY MAJOR;\n\nSources: [27]",
+    "retrieved_pages": [
+      28,
+      26,
+      30,
+      25
+    ],
+    "grade": "y"
+  }
+]

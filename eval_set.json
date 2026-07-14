@@ -1,0 +1,22 @@
+[
+  {"question": "How do I convert a column's values to uppercase in a query?", "expected_page": 2},
+  {"question": "How do I get only the distinct/unique majors from the student table?", "expected_page": 3},
+  {"question": "How do I extract the first three characters of a name using SQL?", "expected_page": 4},
+  {"question": "How do I find the position of a particular character within a string?", "expected_page": 4},
+  {"question": "How do I replace one character with another throughout a column?", "expected_page": 6},
+  {"question": "How do I merge first and last name into a single output column?", "expected_page": 6},
+  {"question": "How do I sort by one column ascending and a second column descending?", "expected_page": 7},
+  {"question": "How do I filter rows where a column matches any value in a list?", "expected_page": 8},
+  {"question": "How do I exclude specific values from results using NOT IN?", "expected_page": 9},
+  {"question": "How do I find names that end with a specific letter and are exactly 5 characters long?", "expected_page": 10},
+  {"question": "How do I filter rows where a numeric column falls within a range?", "expected_page": 10},
+  {"question": "How do I count how many students are in a specific major?", "expected_page": 11},
+  {"question": "How do I join two tables to show which students got scholarships?", "expected_page": 13},
+  {"question": "How do I select only the even-numbered rows from a table?", "expected_page": 14},
+  {"question": "How do I use a LEFT JOIN to include rows with no match, like students without scholarships?", "expected_page": 15},
+  {"question": "How do I get the top N rows sorted by GPA descending?", "expected_page": 16},
+  {"question": "How do I find the nth highest GPA using a correlated subquery, without LIMIT?", "expected_page": 17},
+  {"question": "How do I find the second highest value using a subquery?", "expected_page": 18},
+  {"question": "How do I find students who never received a scholarship, using NOT IN with a subquery?", "expected_page": 20},
+  {"question": "How do I compute the average GPA per major using GROUP BY?", "expected_page": 29}
+]
